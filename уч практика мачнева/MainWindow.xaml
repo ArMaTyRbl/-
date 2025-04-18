@@ -1,0 +1,42 @@
+﻿<Window x:Class="уч_практика_мачнева.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:уч_практика_мачнева"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10" VerticalAlignment="Top">
+            <TextBlock Text="Размер массива:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox Name="ArraySizeTextBox" Width="50" Margin="0,0,10,0" Text="20"/>
+
+            <TextBlock Text="Мин. значение:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox Name="MinValueTextBox" Width="50" Margin="0,0,10,0" Text="0"/>
+
+            <TextBlock Text="Макс. значение:" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox Name="MaxValueTextBox" Width="50" Margin="0,0,10,0" Text="10"/>
+
+            <Button Name="GenerateButton" Content="Сгенерировать данные" Width="160" Click="GenerateButton_Click"/>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Canvas Name="OriginalGraphCanvas" Background="LightGray" Grid.Column="0" Margin="5" />
+            <Canvas Name="DuplicateGraphCanvas" Background="LightGray" Grid.Column="1" Margin="5" />
+        </Grid>
+        <StackPanel Grid.Row="2" Margin="0,10,0,0">
+            <TextBlock Name="ResultTextBlock" FontSize="16" Margin="0,0,0,10"/>
+            <GroupBox Header="Повторяющиеся подряд элементы" Margin="0,0,0,0" Height="100">
+                <ListBox Name="DuplicatesListBox"/>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>
